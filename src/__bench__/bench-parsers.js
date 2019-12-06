@@ -1,3 +1,5 @@
+const crypto = require('crypto')
+
 const { parse: babelParse } = require('@babel/parser')
 const babelPluginJSX = require('@babel/plugin-syntax-jsx')
 const { default: babelTraverse } = require('@babel/traverse')
@@ -67,8 +69,14 @@ const parsers = [
 	},
 ]
 
+console.log('Targets:')
 sourceFiles.forEach(sourceFile => {
 	const { file, source } = sourceFile
+	const hasher = crypto.createHash('md5')
+	hasher.update(source)
+	const sourceHash = hasher.digest('hex')
+
+	console.log(`\t- ${file} (md5: ${sourceHash})`)
 
 	for (const parser of parsers) {
 		const { name, parse, walk, walkSource } = parser
@@ -105,3 +113,4 @@ sourceFiles.forEach(sourceFile => {
 		})
 	}
 })
+console.log()
