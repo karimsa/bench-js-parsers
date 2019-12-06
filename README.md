@@ -26,39 +26,45 @@ are relatively equally performant).
 > wiz bench "--benchTime" "5000000"
 
 Targets:
-        - bootstrap.min.js (md5: 61f338f870fcd0ff46362ef109d28533)
-        - jquery.min.js (md5: 220afd743d9e9643852e31a135a9f3ae)
-        - react.development.js (md5: 5096de8b459ac09462a481b55b4af8c0)
+  - bootstrap.min.js:
+        Hash: 61f338f870fcd0ff46362ef109d28533
+        Size: 60010 bytes
+  - jquery.min.js:
+        Hash: 220afd743d9e9643852e31a135a9f3ae
+        Size: 88145 bytes
+  - react.development.js:
+        Hash: 5096de8b459ac09462a481b55b4af8c0
+        Size: 74430 bytes
 
-        parse: bootstrap.min.js (60010 bytes) - @babel/parser        57 ops/s    43.7 ms/op 
-        parse: bootstrap.min.js (60010 bytes) - acorn                74 ops/s    37.5 ms/op 
-        parse: bootstrap.min.js (60010 bytes) - esprima              68 ops/s    35.1 ms/op 
-        parse: bootstrap.min.js (60010 bytes) - meriyah             237 ops/s    16.4 ms/op 
+        parse: bootstrap.min.js - @babel/parser        57 ops/s    43.7 ms/op 
+        parse: bootstrap.min.js - acorn                74 ops/s    37.5 ms/op 
+        parse: bootstrap.min.js - esprima              68 ops/s    35.1 ms/op 
+        parse: bootstrap.min.js - meriyah             237 ops/s    16.4 ms/op 
 
-        parse: jquery.min.js (88145 bytes) - @babel/parser           29 ops/s    49.6 ms/op 
-        parse: jquery.min.js (88145 bytes) - acorn                   37 ops/s    47.4 ms/op 
-        parse: jquery.min.js (88145 bytes) - esprima                 25 ops/s      56 ms/op 
-        parse: jquery.min.js (88145 bytes) - meriyah                118 ops/s    19.6 ms/op 
+        parse: jquery.min.js - @babel/parser           29 ops/s    49.6 ms/op 
+        parse: jquery.min.js - acorn                   37 ops/s    47.4 ms/op 
+        parse: jquery.min.js - esprima                 25 ops/s      56 ms/op 
+        parse: jquery.min.js - meriyah                118 ops/s    19.6 ms/op 
 
-        parse: react.development.js (74430 bytes) - @babel/parser   119 ops/s    16.8 ms/op 
-        parse: react.development.js (74430 bytes) - acorn           154 ops/s    15.2 ms/op 
-        parse: react.development.js (74430 bytes) - esprima         124 ops/s     8.4 ms/op 
-        parse: react.development.js (74430 bytes) - meriyah         392 ops/s       3 ms/op 
+        parse: react.development.js - @babel/parser   119 ops/s    16.8 ms/op 
+        parse: react.development.js - acorn           154 ops/s    15.2 ms/op 
+        parse: react.development.js - esprima         124 ops/s     8.4 ms/op 
+        parse: react.development.js - meriyah         392 ops/s       3 ms/op 
 
-        walk: bootstrap.min.js (60010 bytes) - @babel/parser          8 ops/s   140.8 ms/op 
-        walk: bootstrap.min.js (60010 bytes) - acorn                 56 ops/s      34 ms/op 
-        walk: bootstrap.min.js (60010 bytes) - esprima               45 ops/s    28.3 ms/op 
-        walk: bootstrap.min.js (60010 bytes) - meriyah              153 ops/s     7.7 ms/op 
+        walk: bootstrap.min.js - @babel/parser          8 ops/s   140.8 ms/op 
+        walk: bootstrap.min.js - acorn                 56 ops/s      34 ms/op 
+        walk: bootstrap.min.js - esprima               45 ops/s    28.3 ms/op 
+        walk: bootstrap.min.js - meriyah              153 ops/s     7.7 ms/op 
 
-        walk: jquery.min.js (88145 bytes) - @babel/parser             5 ops/s   176.7 ms/op 
-        walk: jquery.min.js (88145 bytes) - acorn                    30 ops/s    60.5 ms/op 
-        walk: jquery.min.js (88145 bytes) - esprima                  29 ops/s    33.8 ms/op 
-        walk: jquery.min.js (88145 bytes) - meriyah                  93 ops/s    10.7 ms/op 
+        walk: jquery.min.js - @babel/parser             5 ops/s   176.7 ms/op 
+        walk: jquery.min.js - acorn                    30 ops/s    60.5 ms/op 
+        walk: jquery.min.js - esprima                  29 ops/s    33.8 ms/op 
+        walk: jquery.min.js - meriyah                  93 ops/s    10.7 ms/op 
 
-        walk: react.development.js (74430 bytes) - @babel/parser     24 ops/s    41.8 ms/op 
-        walk: react.development.js (74430 bytes) - acorn            122 ops/s    18.6 ms/op 
-        walk: react.development.js (74430 bytes) - esprima          134 ops/s     7.4 ms/op 
-        walk: react.development.js (74430 bytes) - meriyah          264 ops/s     7.7 ms/op 
+        walk: react.development.js - @babel/parser     24 ops/s    41.8 ms/op 
+        walk: react.development.js - acorn            122 ops/s    18.6 ms/op 
+        walk: react.development.js - esprima          134 ops/s     7.4 ms/op 
+        walk: react.development.js - meriyah          264 ops/s     7.7 ms/op 
 bench: 8m
 
 ```

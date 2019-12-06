@@ -76,17 +76,19 @@ sourceFiles.forEach(sourceFile => {
 	hasher.update(source)
 	const sourceHash = hasher.digest('hex')
 
-	console.log(`\t- ${file} (md5: ${sourceHash})`)
+	console.log(
+		`  - ${file}:\n\tHash: ${sourceHash}\n\tSize: ${source.length} bytes`,
+	)
 
 	for (const parser of parsers) {
 		const { name, parse, walk, walkSource } = parser
 
-		benchmark(`parse: ${file} (${source.length} bytes) - ${name}`, b => {
+		benchmark(`parse: ${file} - ${name}`, b => {
 			for (let i = 0; i < b.N(); i++) {
 				parse(source)
 			}
 		})
-		benchmark(`walk: ${file} (${source.length} bytes) - ${name}`, b => {
+		benchmark(`walk: ${file} - ${name}`, b => {
 			let ids
 			for (let i = 0; i < b.N(); i++) {
 				if (walkSource) {
