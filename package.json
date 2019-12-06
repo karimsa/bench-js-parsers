@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "postinstall": "./scripts/fetch-todomvc.sh",
     "benchmark": "wiz bench"
   },
   "dependencies": {

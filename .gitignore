@@ -1,5 +1,6 @@
 node_modules
 *.log
-
 .wiz
 *.dist.js
+todomvc
+tastejs-todomvc-*

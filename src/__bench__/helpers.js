@@ -18,6 +18,19 @@ const sourceFiles = [
 		file: 'react.development.js',
 		path: path.join(modules, 'react', 'cjs', 'react.development.js'),
 	},
+	{
+		file: 'app.jsx (todomvc)',
+		path: path.join(
+			__dirname,
+			'..',
+			'..',
+			'todomvc',
+			'examples',
+			'react',
+			'js',
+			'app.jsx',
+		),
+	},
 ].map(file => {
 	file.source = fs.readFileSync(file.path, 'utf8')
 	return file

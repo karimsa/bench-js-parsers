@@ -1,22 +1,21 @@
 const crypto = require('crypto')
 
 const { parse: babelParse } = require('@babel/parser')
-const babelPluginJSX = require('@babel/plugin-syntax-jsx')
 const { default: babelTraverse } = require('@babel/traverse')
 const acorn = require('acorn').Parser.extend(require('acorn-jsx')())
-const acornWalk = require('acorn-walk')
 const { benchmark } = require('@karimsa/wiz/bench')
 const esprima = require('esprima')
 const meriyah = require('meriyah')
 
 const { sourceFiles } = require('./helpers')
+const { walk: acornWalk } = require('./acorn-walker')
 
 const parsers = [
 	{
 		name: '@babel/parser',
 		parse: src =>
 			babelParse(src, {
-				plugins: [babelPluginJSX],
+				plugins: ['jsx'],
 			}),
 		walk: ast => {
 			let nodesFound = 0
@@ -33,7 +32,7 @@ const parsers = [
 		parse: src => acorn.parse(src),
 		walk: ast => {
 			let nodesFound = 0
-			acornWalk.simple(ast, {
+			acornWalk(ast, {
 				CallExpression() {
 					nodesFound++
 				},
@@ -59,7 +58,7 @@ const parsers = [
 		parse: src => meriyah.parseScript(src, { jsx: true }),
 		walk: ast => {
 			let nodesFound = 0
-			acornWalk.simple(ast, {
+			acornWalk(ast, {
 				CallExpression() {
 					nodesFound++
 				},
