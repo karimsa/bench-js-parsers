@@ -73,12 +73,12 @@ sourceFiles.forEach(sourceFile => {
 	for (const parser of parsers) {
 		const { name, parse, walk, walkSource } = parser
 
-		benchmark(`parse: ${file} - ${name}`, b => {
+		benchmark(`parse: ${file} (${source.length} bytes) - ${name}`, b => {
 			for (let i = 0; i < b.N(); i++) {
 				parse(source)
 			}
 		})
-		benchmark(`walk: ${file} - ${name}`, b => {
+		benchmark(`walk: ${file} (${source.length} bytes) - ${name}`, b => {
 			let ids
 			for (let i = 0; i < b.N(); i++) {
 				if (walkSource) {
