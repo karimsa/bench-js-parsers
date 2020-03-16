@@ -8,7 +8,7 @@
     "@babel/plugin-syntax-jsx": "^7.7.4",
     "@babel/traverse": "^7.7.4",
     "@karimsa/wiz": "^0.8.2",
-    "acorn": "^7.1.0",
+    "acorn": "^7.1.1",
     "acorn-jsx": "^5.1.0",
     "acorn-walk": "^7.0.0",
     "bootstrap": "4.4.1",
